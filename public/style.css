@@ -1,0 +1,40 @@
+
+.clockcontainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	grid-gap: 0.5em;
+	padding-top: 1em;
+}
+
+s-contactcard {
+	align-self: top;
+	justify-self: center;
+}
+s-card {
+	align-self: top;
+	justify-self: center;
+}
+
+s-quote {
+	align-self: top;
+	justify-self: center;
+	height: auto;
+	width: auto;
+}
+.clock {
+	width: 300px;
+	height: auto;
+	justify-self: center;
+}
+s-avatar { 
+	align-self: center;
+	justify-self: center;
+}
+
+
+@media (max-width: 900px) {
+	.clockcontainer {
+		 grid-template-columns: 1fr;
+	}
+}

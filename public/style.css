@@ -1,18 +1,16 @@
 
 .clockcontainer {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	justify-content: center;
+	grid-template-columns: 1fr;
+	justify-content: space-around;
+	align-content: space-around;
 	grid-gap: 0.5em;
 	padding-top: 1em;
 }
 
-s-contactcard {
-	align-self: top;
-	justify-self: center;
-}
 s-card {
 	align-self: top;
+	align-self: center;
 	justify-self: center;
 }
 
@@ -22,14 +20,28 @@ s-quote {
 	height: auto;
 	width: auto;
 }
-.clock {
-	width: 300px;
+s-clock {
+	width: 800px;
 	height: auto;
+	align-self: center;
 	justify-self: center;
 }
 s-avatar { 
 	align-self: center;
 	justify-self: center;
+}
+s-tab {
+	justify-content: center;
+	justify-self: center;
+}
+.container {
+	width: 800px;
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: space-around;
+	align-content: space-around;
+	grid-gap: 0.5em;
+	padding-top: 1em;
 }
 
 

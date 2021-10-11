@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <title>Svelte app</title>
-      <script src="build/bundle.js"></script>
-      <link rel="icon" type="image/png" href="favicon.png" />
-      <link rel="stylesheet" type="text/css" href="global.css" />
-      <link rel="stylesheet" type="text/css" href="build/bundle.css" />
-      <link rel="stylesheet" href="style.css">
-   </head>
 
-   <body>
-      <div class="clockcontainer">
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <title>Svelte app</title>
+   <script defer src="build/bundle.js"></script>
+   <link rel="icon" type="image/png" href="favicon.png" />
+   <link rel="stylesheet" type="text/css" href="global.css" />
+   <link rel="stylesheet" type="text/css" href="build/bundle.css" />
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <s-tabs selectedtab="2">
+      <s-tab id="1" title="Example Tab">
+         <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iste numquam accusantium. Velit veritatis
+               harum voluptatem! Repudiandae nostrum quia inventore ipsa ullam distinctio praesentium quae totam? Beatae
+               magni praesentium eius eum ad, soluta at adipisci sunt reiciendis harum, exercitationem quam voluptatibus
+               fugit atque? Nesciunt blanditiis impedit dicta ullam est quis, nulla id obcaecati itaque ratione, in
+               quidem placeat similique eveniet inventore repellendus tenetur aut quisquam, deserunt labore. Id quam
+               laboriosam rerum sapiente praesentium aliquid ipsa reprehenderit tempore earum suscipit deleniti, porro,
+               numquam nam, eos mollitia odio consectetur nulla. Consequuntur, expedita voluptas aliquid facere sunt
+               iste? Ab, maiores reprehenderit. Numquam, est dolore? At dicta quam veritatis ab velit dignissimos
+               delectus facilis qui iste obcaecati repellat ullam, atque voluptate molestiae repudiandae beatae nam
+               nobis, et omnis? In illo tempore dolorem ducimus consectetur, maxime explicabo quod eos illum impedit
+               nulla? Numquam inventore sed laborum tempore, earum repudiandae debitis vitae cupiditate assumenda non
+               velit nemo recusandae itaque quisquam nobis atque incidunt harum aperiam totam aspernatur voluptatem.
+               Fuga quae aliquid voluptatibus repudiandae illum nobis soluta, ipsam exercitationem? Tempora sequi beatae
+               adipisci minus voluptatum cum culpa mollitia nobis earum, temporibus vel fugit facilis doloribus ea quo
+               odio incidunt maxime ipsa nam nostrum officia et molestias? Aperiam!</p>
+         </div>
+      </s-tab>
+      <s-tab id="2" title="Phil Webb">
          <s-contactcard bgcolor="lightblue">
             <span slot="name">
 
@@ -25,7 +46,9 @@
             </span>
             <span slot="email">prwebb@optusnet.com.au</span>
          </s-contactcard>
-         <s-contactcard bgcolor="lightgreen">
+      </s-tab>
+      <s-tab id="3" title="John Smith">
+         <s-contactcard bgcolor="lightgrey">
             <span slot="address">
                24 Bridges Rise<br />
                KIARA WA 6054
@@ -33,7 +56,9 @@
             <span slot="name">John Smith</span>Ï
             <span slot="email">jsmith@optusnet.com.au</span>
          </s-contactcard>
-         <s-card bgcolor="lightpink">
+      </s-tab>
+      <s-tab id="4" title="About Phil">
+         <s-card bgcolor="lightgrey">
             <span slot="subject">About Phil Webb</span>
             <span slot="article">
                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -44,6 +69,8 @@
 
             <span slot="footer">End of the road</span>
          </s-card>
+      </s-tab>
+      <s-tab id="5" title="About John">
          <s-card bgcolor="lightyellow">
             <span slot="subject">About John Smith</span>
             <span slot="article">
@@ -51,68 +78,21 @@
             </span>
             <span slot="footer">That's all folks</span>
          </s-card>
-
-         <div class="clock">
-            <s-clock clocktitle="The Clock" class="clock1" />
+      </s-tab>
+      <s-tab id="6" title="Clock">
+         <div class="clockcontainer">
+            <s-clock />
          </div>
-         <div class="clock">
-            <s-clock class="clock2" clocktitle="Second Clock"></s-clock>
-         </div>
-         <s-quote>
-            <span slot="quote"
-               >Whether it is nobler in the mind to suffer the slings and arrows
-               of outrageous fortune . . .</span
-            >
-            <span slot="footer">-- Phil Webb</span>
-         </s-quote>
-         <s-quote>
-            <span slot="quote"
-               >
-               <p>Immediately aove this quote container is a clock component named
-               Second Clock. Svelte has been used to create this element and the
-               compiled bundle.js can be standalone distributed to allow other
-               users of the component.</p>
-               <s-avatar bgcolor="lightpink" imgurl="./images/phil2.png"> </s-avatar>
-            </span>
-            <span slot="footer">-- anon</span>
-         </s-quote>
-         <s-avatar bgcolor="lightpink" imgurl="./images/phil2.png"> </s-avatar>
-         <s-avatar bgcolor="yellow" imgurl="./images/user-2.jpg"> </s-avatar>
-         <s-creditcard class="creditcard1"></s-creditcard>
-         <s-creditcard class="creditcard2"></s-creditcard>
-      </div>
+      </s-tab>
+      <s-tab id="7" title="Card Payment">
+         <s-creditcard></s-creditcard>
+      </s-tab>
+      <s-tab id="8" title="Avatar">
+         <s-avatar>
+            </s-creditcard>
+      </s-tab>
+   </s-tabs>
 
-      <script>
-         var el = document.querySelector('.clock1');
-         el.addEventListener('savedData', (e) => {
-            console.log('[index.html][savedData]', 'clock1: ' + e.detail.text);
-         });
-         el = document.querySelector('.clock2');
-         el.addEventListener('savedData', (e) => {
-            console.log('[index.html][savedData]', 'clock2: ' + e.detail.text);
-         });
-         el = document.querySelector('.creditcard1');
-         el.addEventListener('cardData', (event) => {
-            logEvent(event);
-         });
-         el = document.querySelector('.creditcard2');
-         el.addEventListener('cardData', (event) => {
-            logEvent(event);
-         });
-         function logEvent(event) {
-            console.log(
-               'cardName:   ' + '\t\t' +
-                  event.detail.cardName +
-                  ' \ncardNumber: ' + '\t\t' +
-                  event.detail.cardNumber + '\t\t' +
-                  ' \ncardMonth:  '  + '\t\t' +
-                  event.detail.cardMonth +
-                  ' \ncardYear:   '  + '\t\t' +
-                  event.detail.cardYear +
-                  ' \ncardCvv:    '  + '\t\t' +
-                  event.detail.cardCvv
-            );
-         }
-      </script>
-   </body>
+</body>
+
 </html>

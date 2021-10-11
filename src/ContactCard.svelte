@@ -1,6 +1,28 @@
+<svelte:options tag="s-contactcard" />
+
 <script>
-  export let bgcolor = 'lightgrey';
+  export let bgcolor = "lightgrey";
 </script>
+
+<article class="contact-card" style="background-color:{bgcolor};">
+  <h2 class="name">
+    <slot name="name" class="namecontainer">
+      <span class="missing">Unknown name</span>
+    </slot>
+  </h2>
+
+  <div class="address">
+    <slot name="address">
+      <span class="missing">Unknown address</span>
+    </slot>
+  </div>
+
+  <div class="email">
+    <slot name="email">
+      <span class="missing">Unknown email</span>
+    </slot>
+  </div>
+</article>
 
 <style>
   .contact-card {
@@ -37,29 +59,8 @@
   .missing {
     color: #999;
   }
-  .name>span {
+  .name > span {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
 </style>
-
-<svelte:options tag="s-contactcard" />
-<article class="contact-card" style="background-color:{bgcolor};">
-  <h2 class="name" >
-    <slot name="name" class="namecontainer">
-      <span class="missing">Unknown name</span>
-    </slot>
-  </h2>
-
-  <div class="address">
-    <slot name="address">
-      <span class="missing">Unknown address</span>
-    </slot>
-  </div>
-
-  <div class="email">
-    <slot name="email">
-      <span class="missing">Unknown email</span>
-    </slot>
-  </div>
-</article>

@@ -80,9 +80,19 @@
          </s-card>
       </s-tab>
       <s-tab id="6" title="Clock">
-         <div class="clockcontainer">
-            <s-clock />
-         </div>
+         <s-card bgcolor="lightgrey">
+            <span slot="subject">Clock</span>
+            <span slot="article">
+               <div class="">
+                  <s-clock />
+               </div>
+            </span>
+
+            <span slot="footer"></span>
+            <div class="clockcontainer">
+               <s-clock />
+            </div>
+         </s-card>
       </s-tab>
       <s-tab id="7" title="Card Payment">
          <s-creditcard></s-creditcard>
